@@ -74,7 +74,8 @@ class MetaCommand extends Command
         $bindings = array();
         foreach ($this->getAbstracts() as $abstract) {
             // Validator and seeder cause problems
-            if (in_array($abstract, ['validator', 'seeder'])) {
+            // TODO: Move this list into config file
+            if (in_array($abstract, ['validator', 'seeder', 'steamauth'])) {
                 continue;
             }
             
